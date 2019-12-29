@@ -1,16 +1,15 @@
-# Docker, CentOS 7, OpenJDK 12, Spring Boot
-This is an example Dockerfile showing functionality of deploying a Spring Boot Java JAR file using CentOS 7. 
+# Docker, CentOS 7, Spring Boot
+This repository holds all files needed to create several types of Docker containers based on [CentOS 7](https://www.centos.org/).
 
-Upon building of the container, the following are installed/configured:
-* All updates/upgrades.
-* OpenJDK 12.
-* The target JAR file.
+The most pertinent container can run a [Spring Boot](https://spring.io/projects/spring-boot) JAR using [Amazon Corretto](https://aws.amazon.com/corretto/) 11; as a privileged or non-privileged user. This container is in `./implementation/3_CentOS_7_Corretto_SpringBoot/`.
 
-The JAR file will run when the container is started.
+The project assumes Docker is properly configured/installed on the user's system, with "$ docker -v" functioning properly from the command line.
 
-There is some commented-out code pertaining to Monit...next steps.
+Useful commands are shown in the comments section at the top of each "./Dockerfile".
 
-The eventual goal is to port to RedHat 7. CentOS will provide a good enough sandbox for now.
-
-## Instructions:
-Follow notes in the comments at the top of `./implementation/Dockerfile`.
+These files show how to create Docker containers with:
+* CentOS 7.
+* All updates/upgrades installed.
+* Amazon Corretto and simple Spring Boot based [time-retrieval web service](https://github.com/samueltoepke/Time_Web-Service) installed as a JAR file.
+* New, non-privileged user added (optional).
+* OpenJDK, startup script.
